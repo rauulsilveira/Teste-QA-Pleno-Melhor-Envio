@@ -1,0 +1,17 @@
+{
+  "name": "melhor-envio",
+  "version": "1.0.0",
+  "description": "Teste prático",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open",
+    "baseUrl": "'https://sandbox.melhorenvio.com.br'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.1",
+    "faker-br": "^0.4.1"
+  }
+}
