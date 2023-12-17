@@ -1,5 +1,6 @@
 # Teste-QA-Pleno-Melhor-Envio
-Teste automatizado Frontend e Backend para a vaga de QA Pleno Melhor Envio
+<br/>Teste automatizado Frontend e Backend para a vaga de QA Pleno Melhor Envio<br/>
 <br/> A primeira parte do teste consiste em criar os cenários de teste, cenários que estão dentro da pasta Cypress> Cenários > Cenários_cadastro_gherkin, foi utilizado o plugin "Cucumber (Gherkin) Full Support" para melhor visualização<br/> 
 <br/> A segunda parte do teste consiste em criar 2 cenários de teste da lista de cenários levantados, para auxiliar na geração de dados foi utilizado a API Faker.br, então devemos ter repetição no que foi gerado assim não deve quebrar nenhum teste por repetição de informação, foi utilizado a metodologia Page objects, foi utilizado um teste de fumaça que abrange todo o fluxo de cadastro então foi mapeado a maioria dos elements <br/>
+<br/> A terceira parte do teste consiste no teste da API de cadastro Melhor Envio, onde também foi utlizado a API faker.br porém não consegui ajustar o formato do número celular gerado pelo faker então criei uma pequena função para gerar um número de celular aleatório, assim não caindo na validação "validate_phone" e deixando os testes assertivos<br/>
 <br/> Para iniciar o projeto basta utilizar o comando npm install e utilizar o comando npm tun cypress:open <br/> 
