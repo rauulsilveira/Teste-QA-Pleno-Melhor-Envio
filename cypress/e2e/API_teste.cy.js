@@ -3,6 +3,15 @@ var faker = require('faker-br');
 
 faker.locale = 'pt_BR'
 
+//Função para gerar um número de celular válido, com o faker não consegui acertar o format correto
+function gerarNumeroCelular() {
+    const ddd = 119
+    const parteNumerica = Math.floor(Math.random() * 8000000) + 900000;
+  
+    return `(${ddd}) 8${parteNumerica}`;
+  }
+  const numeroCelular = gerarNumeroCelular();
+
 
 describe('Teste prático API', () => {
     var firstName = faker.name.firstName();
@@ -12,7 +21,7 @@ describe('Teste prático API', () => {
     var Cel = faker.phone.phoneNumber()
 
     it('Espera o status code 201', () => {
-       cy.request({
+    cy.request({
         method: 'POST',
         url: 'https://sandbox.melhorenvio.com.br/api/v2/users',
         headers: {
@@ -26,7 +35,7 @@ describe('Teste prático API', () => {
                 "email": email,
                 "document": CPF,
                 "birthdate": "1990-01-01",
-                "phone_mobile": Cel,
+                "phone_mobile": numeroCelular,
                 "password":"a1a2a3a4a5a6",
                 "terms":true
                 
@@ -39,13 +48,14 @@ describe('Teste prático API', () => {
         });
     
       });
-      var firstName1 = faker.name.firstName();
-      var lastName1 = faker.name.lastName();
-      var email1 = faker.internet.email();
-      var Cel1 = faker.phone.phoneNumber()
+      
       
       it('Espera o status code 422', () => {
-        cy.request({
+        var firstName1 = faker.name.firstName();
+        var lastName1 = faker.name.lastName();
+        var email1 = faker.internet.email();
+        var Cel1 = faker.phone.phoneNumber();
+      cy.request({
             method: 'POST',
             url: 'https://sandbox.melhorenvio.com.br/api/v2/users',
             failOnStatusCode: false,
